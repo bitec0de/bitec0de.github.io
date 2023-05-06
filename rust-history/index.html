@@ -33,7 +33,7 @@
 
     @media (prefers-color-scheme: dark) {
         html{background: #0b0b0b;
-            color: #ccc;
+            color: #ddd;
         }
         .solid-background {
             background: #111
@@ -42,7 +42,7 @@
             background-color: #282828;
         }
         a {
-            color: #79f;
+            color: #61A8FF;
         }
         a:visited {
             color: #d7f;
@@ -55,22 +55,15 @@
 <script>
     function resized(event) {
         let total_height = document.body.scrollHeight + window.innerHeight;
-        console.log(window.innerHeight);
-        sidebar = document.getElementById('sidebar')
 
         sections = document.getElementsByClassName('section')
         markers = document.getElementsByClassName('size-marker')
-        console.log(sections.length)
+
         for (let i = 0; i < sections.length; i++) {
-            // let h = sections[i].clientHeight
             let y = sections[i].offsetTop
-            console.log(sections[i])
             markers[i].style['position'] = 'absolute'
             markers[i].style['top'] = ((y*100)/total_height)+'%'
-            // markers[i].style['background'] = 'red'
             markers[i].style['width'] = '0.5em'
-
-            // markers[i].style['height'] = ((h*100)/total_height)+'%'
         }
     };
 
